@@ -12,7 +12,7 @@ const ResetPassword = () => {
 
       console.log("Hey there");
       
-    fetch("http://localhost:8081/api/users/forgotPassword", {
+    fetch("https://yonex-badminton-store.onrender.com/api/users/forgotPassword", {
         method: "POST",
         crossDomain: true,
         headers:{

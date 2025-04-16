@@ -62,7 +62,8 @@ export const forgotPassword = async (req, res) => {
             expiresIn: "10m",
         })
         // this link will be sent to user thru email, this link has to be modified when website is deployed
-        const link = `http://localhost:${process.env.PORT}/${oldUser._id}/${token}`
+        // const link = `http://localhost:${process.env.PORT}/${oldUser._id}/${token}`
+        const link = `https://yonex-badminton-store.onrender.com/${oldUser._id}/${token}`
         console.log(link)
 
         return res.json({ status: "ok" })

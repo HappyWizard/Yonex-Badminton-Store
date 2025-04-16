@@ -13,7 +13,7 @@ const SignUp = () => {
     // Logic for sign-up (API call)
     console.log({ username, email, password });
 
-    fetch("http://localhost:8081/api/users/signup", {
+    fetch("https://yonex-badminton-store.onrender.com/api/users/signup", {
       method: "POST",
       crossDomain: true,
       headers:{

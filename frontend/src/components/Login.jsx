@@ -26,7 +26,7 @@ const Login = () => {
     // Logic for login (could add API calls here)
     console.log({ email, password });
 
-    fetch("http://localhost:8081/api/users/login", {
+    fetch("https://yonex-badminton-store.onrender.com/api/users/login", {
       method: "POST",
       crossDomain: true,
       headers:{
