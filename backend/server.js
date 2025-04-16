@@ -13,20 +13,20 @@ const PORT = process.env.PORT || 8081     // 5000 here is a fall back value in c
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
 
-const __dirname = path.resolve();
+const __rootdirname = path.resolve();
 
 app.use(express.json()) // allows us to accept JSON data in the req.body
 app.use(cors());
 app.use("/api/products", productRoutes)
 app.use("/api/users", userRoutes)
 
-if (process.env.Node_ENV === "production"){
-    app.use(express.static(path.join(__dirname,"/frontend/dist")));
 
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-    });
-}
+app.use(express.static(path.join(__rootdirname,"/frontend/dist")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__rootdirname, "frontend", "dist", "index.html"));
+});
+
 // app.set("view engine", "ejs")
 // app.set('views', path.join(__dirname, 'views'));
 // app.use(express.urlencoded({ extended: false }));  // This allows you to handle form data (req.body)
